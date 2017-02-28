@@ -1,7 +1,25 @@
 PODS:
-  - PMRangeSlider (0.1.0)
+  - BlocksKit (2.2.5):
+    - BlocksKit/All (= 2.2.5)
+  - BlocksKit/All (2.2.5):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+    - BlocksKit/MessageUI
+    - BlocksKit/UIKit
+  - BlocksKit/Core (2.2.5)
+  - BlocksKit/DynamicDelegate (2.2.5)
+  - BlocksKit/MessageUI (2.2.5):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+  - BlocksKit/UIKit (2.2.5):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+  - Masonry (1.0.2)
+  - PMRangeSlider (0.1.0):
+    - BlocksKit (~> 2.2.5)
 
 DEPENDENCIES:
+  - Masonry (~> 1.0)
   - PMRangeSlider (from `../`)
 
 EXTERNAL SOURCES:
@@ -9,8 +27,10 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  PMRangeSlider: a8d557e9ec4fbe95575c5c353c19672f835ec10e
+  BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
+  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+  PMRangeSlider: 77d14a0e22f0187993ed7e5de02845291888eab8
 
-PODFILE CHECKSUM: fa8aa7d52d4b1d7a32b1bf409b9f9b21f6ca2a04
+PODFILE CHECKSUM: 0f9af8f6398389e4b90af50dacf88d6a63e44258
 
 COCOAPODS: 1.1.1

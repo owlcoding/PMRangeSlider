@@ -100,7 +100,6 @@ CGFloat const kPMRangeSliderViewLineHeight = 2.0f;
     } else {
         x = MAX(x, self.leftThumb.frame.origin.x + diameter + kPMRangeSliderViewThumbMinimumDistance + diameter / 2);
     }
-    NSLog(@"%f", x);
     [self moveThumb:thumb toHorizontalPosition:x];
 }
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5DD73D1C1E65AA1C00D3CD60 /* MainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DD73D1B1E65AA1C00D3CD60 /* MainView.m */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -21,7 +22,6 @@
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
-		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		959690AB8FC9B89724085EC9 /* Pods_PMRangeSlider_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C742A51B84336855E2405AB2 /* Pods_PMRangeSlider_Tests.framework */; };
 		CFCACC52A57E46B87D745245 /* Pods_PMRangeSlider_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 758447E07D806C874ECDE200 /* Pods_PMRangeSlider_Example.framework */; };
 /* End PBXBuildFile section */
@@ -39,9 +39,11 @@
 /* Begin PBXFileReference section */
 		05EB0960BF44A6956DE3E9FA /* Pods-PMRangeSlider_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PMRangeSlider_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PMRangeSlider_Tests/Pods-PMRangeSlider_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		1FC0DB7D3CDBD546AE6C2270 /* Pods-PMRangeSlider_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PMRangeSlider_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-PMRangeSlider_Example/Pods-PMRangeSlider_Example.release.xcconfig"; sourceTree = "<group>"; };
-		459DC871DD5D1BEA49F8AD5E /* PMRangeSlider.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = PMRangeSlider.podspec; path = ../PMRangeSlider.podspec; sourceTree = "<group>"; };
+		459DC871DD5D1BEA49F8AD5E /* PMRangeSlider.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = PMRangeSlider.podspec; path = ../PMRangeSlider.podspec; sourceTree = "<group>"; };
 		597B4D3510B8CFFCB6E1D0A1 /* Pods-PMRangeSlider_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PMRangeSlider_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PMRangeSlider_Tests/Pods-PMRangeSlider_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		5F0BEA93392C3D5624FA1127 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		5DD73D1A1E65AA1C00D3CD60 /* MainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainView.h; sourceTree = "<group>"; };
+		5DD73D1B1E65AA1C00D3CD60 /* MainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainView.m; sourceTree = "<group>"; };
+		5F0BEA93392C3D5624FA1127 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* PMRangeSlider_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PMRangeSlider_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -63,9 +65,8 @@
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		758447E07D806C874ECDE200 /* Pods_PMRangeSlider_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PMRangeSlider_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8C790830E750EE43B40FDFAC /* Pods-PMRangeSlider_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PMRangeSlider_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PMRangeSlider_Example/Pods-PMRangeSlider_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		AF42BD73CA8704CF36094414 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		AF42BD73CA8704CF36094414 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		C742A51B84336855E2405AB2 /* Pods_PMRangeSlider_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PMRangeSlider_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -134,7 +135,8 @@
 			children = (
 				6003F59C195388D20070C39A /* PMAppDelegate.h */,
 				6003F59D195388D20070C39A /* PMAppDelegate.m */,
-				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
+				5DD73D1A1E65AA1C00D3CD60 /* MainView.h */,
+				5DD73D1B1E65AA1C00D3CD60 /* MainView.m */,
 				6003F5A5195388D20070C39A /* PMViewController.h */,
 				6003F5A6195388D20070C39A /* PMViewController.m */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
@@ -279,7 +281,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
@@ -395,6 +396,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6003F59E195388D20070C39A /* PMAppDelegate.m in Sources */,
+				5DD73D1C1E65AA1C00D3CD60 /* MainView.m in Sources */,
 				6003F5A7195388D20070C39A /* PMViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);
