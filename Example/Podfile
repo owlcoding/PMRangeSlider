@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'PMRangeSlider_Example' do
+  pod 'PMRangeSlider', :path => '../'
+
+  target 'PMRangeSlider_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
