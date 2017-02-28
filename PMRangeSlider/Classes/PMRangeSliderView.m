@@ -119,6 +119,12 @@ CGFloat const kPMRangeSliderViewLineHeight = 2.0f;
         } else {
             strongSelf.currMaxVal = [strongSelf currentMaximumValue];
         }
+        
+        if (state == UIGestureRecognizerStateEnded) {
+            if (strongSelf.rangeSliderViewDelegate && [self.rangeSliderViewDelegate respondsToSelector:@selector(rangeSlider:didStopChangingMinValue:maxValue:)]) {
+                [strongSelf.rangeSliderViewDelegate rangeSlider:strongSelf didStopChangingMinValue:strongSelf.currMinVal maxValue:strongSelf.currMaxVal];
+            }
+        }
     };
 
     UIPanGestureRecognizer *leftPanGesture = [[UIPanGestureRecognizer alloc] bk_initWithHandler:gestureRecognizerBlock];

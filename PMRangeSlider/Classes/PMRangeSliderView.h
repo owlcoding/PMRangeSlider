@@ -11,6 +11,7 @@
 
 @optional
 - (void)rangeSlider:(PMRangeSliderView *)rangeSlider didChangeMinValue:(CGFloat)minValue maxValue:(CGFloat)maxValue;
+- (void)rangeSlider:(PMRangeSliderView *)rangeSlider didStopChangingMinValue:(CGFloat)minValue maxValue:(CGFloat)maxValue;
 
 @end
 

@@ -9,7 +9,6 @@
 #import "PMViewController.h"
 #import "MainView.h"
 #import <PMRangeSlider/PMRangeSliderView.h>
-#import "PMRangeSliderView.h"
 
 @interface PMViewController () <PMRangeSliderViewDelegate>
 
@@ -23,7 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     self.mainView.rangeSliderView.rangeSliderViewDelegate = self;
 }
 
@@ -41,6 +40,10 @@
 - (void)rangeSlider:(PMRangeSliderView *)rangeSlider didChangeMinValue:(CGFloat)minValue maxValue:(CGFloat)maxValue {
     self.mainView.lowTextField.text = [NSString stringWithFormat:@"%.1f", minValue];
     self.mainView.highTextField.text = [NSString stringWithFormat:@"%.1f", maxValue];
+}
+
+- (void)rangeSlider:(PMRangeSliderView *)rangeSlider didStopChangingMinValue:(CGFloat)minValue maxValue:(CGFloat)maxValue {
+    NSLog(@"Did stop moving thumb");
 }
 
 @end

@@ -15,7 +15,7 @@ PODS:
     - BlocksKit/Core
     - BlocksKit/DynamicDelegate
   - Masonry (1.0.2)
-  - PMRangeSlider (0.1.0):
+  - PMRangeSlider (0.1):
     - BlocksKit (~> 2.2.5)
 
 DEPENDENCIES:
@@ -29,7 +29,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
-  PMRangeSlider: 77d14a0e22f0187993ed7e5de02845291888eab8
+  PMRangeSlider: 30375ab33877983606307880db1ad5ef2b9e2aca
 
 PODFILE CHECKSUM: 0f9af8f6398389e4b90af50dacf88d6a63e44258
 
