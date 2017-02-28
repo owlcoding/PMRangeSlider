@@ -31,11 +31,13 @@ CGFloat const kPMRangeSliderViewLineHeight = 2.0f;
     self = [super initWithFrame:frame];
     if (self) {
         _from = from;
+        _currMinVal = from;
         _to = to;
-
+        _currMaxVal = to;
+        
         _leftThumb = [[PMRangeSliderThumb alloc] initWithFrame:CGRectMake(0, 0, kPMRangeSliderViewThumbDiameter, kPMRangeSliderViewThumbDiameter)];
         _rightThumb = [[PMRangeSliderThumb alloc] initWithFrame:CGRectMake(0, 0, kPMRangeSliderViewThumbDiameter, kPMRangeSliderViewThumbDiameter)];
-
+        
         _leftSideLine = [UIView new];
         _leftSideLine.layer.cornerRadius = kPMRangeSliderViewLineHeight / 2;
         [self addSubview:_leftSideLine];
@@ -44,22 +46,22 @@ CGFloat const kPMRangeSliderViewLineHeight = 2.0f;
         _rightSideLine = [UIView new];
         _rightSideLine.layer.cornerRadius = kPMRangeSliderViewLineHeight / 2;
         [self addSubview:_rightSideLine];
-
+        
         [self addSubview:_leftThumb];
         [self addSubview:_rightThumb];
-
+        
         self.backgroundColor = [UIColor clearColor];
         [self setTintColor:nil];
         [self initialThumbsPositions];
         [self setupGestureRecognizers];
     }
-
+    
     return self;
 }
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-
+    
     [self setCurrentMinimumValue:self.currMinVal];
     [self setCurrentMaximumValue:self.currMaxVal];
 }
@@ -79,16 +81,16 @@ CGFloat const kPMRangeSliderViewLineHeight = 2.0f;
     CGFloat lineYOrigin = thumb.center.y - kPMRangeSliderViewLineHeight / 2;
     self.leftSideLine.frame = CGRectMake(0, lineYOrigin, self.leftThumb.center.x, kPMRangeSliderViewLineHeight);
     self.rightSideLine.frame = CGRectMake(self.rightThumb.center.x,
-            lineYOrigin,
-            self.frame.size.width - self.rightThumb.center.x,
-            kPMRangeSliderViewLineHeight);
+                                          lineYOrigin,
+                                          self.frame.size.width - self.rightThumb.center.x,
+                                          kPMRangeSliderViewLineHeight);
     CGFloat distanceBetweenThumbs = self.rightSideLine.frame.origin.x - self.leftSideLine.frame.origin.x - self.leftSideLine.frame.size.width;
     self.betweenLine.frame = CGRectMake(CGRectGetMaxX(self.leftSideLine.frame),
-            lineYOrigin,
-            distanceBetweenThumbs,
-            kPMRangeSliderViewLineHeight);
+                                        lineYOrigin,
+                                        distanceBetweenThumbs,
+                                        kPMRangeSliderViewLineHeight);
     if (self.rangeSliderViewDelegate && [self.rangeSliderViewDelegate respondsToSelector:@selector(rangeSlider:didChangeMinValue:maxValue:)]) {
-        [self.rangeSliderViewDelegate rangeSlider:self didChangeMinValue:self.currMinVal maxValue:self.currMaxVal];
+        [self.rangeSliderViewDelegate rangeSlider:self didChangeMinValue:self.currentMinimumValue maxValue:self.currentMaximumValue];
     }
 }
 
@@ -119,14 +121,13 @@ CGFloat const kPMRangeSliderViewLineHeight = 2.0f;
         } else {
             strongSelf.currMaxVal = [strongSelf currentMaximumValue];
         }
-        
         if (state == UIGestureRecognizerStateEnded) {
             if (strongSelf.rangeSliderViewDelegate && [self.rangeSliderViewDelegate respondsToSelector:@selector(rangeSlider:didStopChangingMinValue:maxValue:)]) {
-                [strongSelf.rangeSliderViewDelegate rangeSlider:strongSelf didStopChangingMinValue:strongSelf.currMinVal maxValue:strongSelf.currMaxVal];
+                [strongSelf.rangeSliderViewDelegate rangeSlider:strongSelf didStopChangingMinValue:strongSelf.currentMinimumValue maxValue:strongSelf.currentMaximumValue];
             }
         }
     };
-
+    
     UIPanGestureRecognizer *leftPanGesture = [[UIPanGestureRecognizer alloc] bk_initWithHandler:gestureRecognizerBlock];
     [self.leftThumb addGestureRecognizer:leftPanGesture];
     UIPanGestureRecognizer *rightPanGesture = [[UIPanGestureRecognizer alloc] bk_initWithHandler:gestureRecognizerBlock];
@@ -153,6 +154,7 @@ CGFloat const kPMRangeSliderViewLineHeight = 2.0f;
     self.currMinVal = currentMinimumValue;
     CGFloat x = [self horizontalPositionForValue:currentMinimumValue];
     [self moveThumb:self.leftThumb toHorizontalPosition:x - self.leftThumb.frame.size.width / 2];
+    [self normalizeThumbHorizontalPosition:self.leftThumb];
 }
 
 - (CGFloat)currentMaximumValue {
@@ -163,6 +165,7 @@ CGFloat const kPMRangeSliderViewLineHeight = 2.0f;
     self.currMaxVal = currentMaximumValue;
     CGFloat x = [self horizontalPositionForValue:currentMaximumValue];
     [self moveThumb:self.rightThumb toHorizontalPosition:x + self.rightThumb.frame.size.width / 2];
+    [self normalizeThumbHorizontalPosition:self.rightThumb];
 }
 
 @end
@@ -171,7 +174,7 @@ CGFloat const kPMRangeSliderViewLineHeight = 2.0f;
 
 - (void)setColor:(UIColor *)color borderColor:(UIColor *)borderColor forThumb:(PMRangeSliderThumb *)thumb {
     thumb.backgroundColor = color;
-
+    
     thumb.layer.shadowColor = color.CGColor;
     thumb.layer.borderWidth = 0.3f;
     thumb.layer.borderColor = borderColor.CGColor;
@@ -185,7 +188,7 @@ CGFloat const kPMRangeSliderViewLineHeight = 2.0f;
     if (!tintColor) {
         tintColor = [[UIColor blueColor] colorWithAlphaComponent:0.6];
     }
-
+    
     [self setColor:tintColor borderColor:[UIColor lightGrayColor] forThumb:self.leftThumb];
     [self setColor:tintColor borderColor:[UIColor lightGrayColor] forThumb:self.rightThumb];
     [self setColor:[UIColor lightGrayColor] forLine:self.leftSideLine];
