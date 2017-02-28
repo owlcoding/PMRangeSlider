@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'PMRangeSlider'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of PMRangeSlider.'
+  s.summary          = 'PMRangeSlider is a control allowing to set a range of numerical values using a double-thumbs slider.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,25 +18,23 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+PMRangeSlider is a control allowing to set a range of numerical values using a double-thumbs slider.
+
+It uses a delegate pattern to communicate value changes. 
                        DESC
 
-  s.homepage         = 'https://github.com/Paweł Mączewski/PMRangeSlider'
+  s.homepage         = 'https://github.com/owlcoding/PMRangeSlider'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'Paweł Mączewski' => 'pawel@owlcoding.com' }
-  s.source           = { :git => 'https://github.com/Paweł Mączewski/PMRangeSlider.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.author           = { 'Pawel Maczewski' => 'pawel@owlcoding.com' }
+  s.source           = { :git => 'https://github.com/owlcoding/PMRangeSlider.git', :tag => s.version.to_s }
+  s.social_media_url = 'https://twitter.com/pawelmaczewski'
 
   s.ios.deployment_target = '8.0'
 
   s.source_files = 'PMRangeSlider/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'PMRangeSlider' => ['PMRangeSlider/Assets/*.png']
-  # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.frameworks = 'UIKit'
+  s.dependency 'BlocksKit', '~> 2.2.5'
 end

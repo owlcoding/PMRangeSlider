@@ -1,0 +1,6 @@
+framework module PMRangeSlider {
+  umbrella header "PMRangeSlider-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,16 @@
+PODS:
+  - PMRangeSlider (0.1.0)
+
+DEPENDENCIES:
+  - PMRangeSlider (from `../`)
+
+EXTERNAL SOURCES:
+  PMRangeSlider:
+    :path: ../
+
+SPEC CHECKSUMS:
+  PMRangeSlider: a8d557e9ec4fbe95575c5c353c19672f835ec10e
+
+PODFILE CHECKSUM: fa8aa7d52d4b1d7a32b1bf409b9f9b21f6ca2a04
+
+COCOAPODS: 1.1.1
